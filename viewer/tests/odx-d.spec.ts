@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test'
 test('Check ODX-D page and navigatation to revision history page', async ({
   page,
 }) => {
-  await page.goto('http://localhost:3000/odx-d')
+  await page.goto('/odx-d')
 
   // Check the main title
   await expect(page.getByTestId('odx-d-title')).toBeVisible()
@@ -65,6 +65,7 @@ test('Check ODX-D page and navigatation to revision history page', async ({
   ).toBeVisible()
   await page.getByTestId('revisions-columns-dropdown-button').click()
 
+  // The revisions table has 6 total columns which can be toggled on/off in the column selection dropdown
   expect(
     await page.getByTestId('revisions-columns-dropdown-entry').all()
   ).toHaveLength(6)
@@ -75,4 +76,49 @@ test('Check ODX-D page and navigatation to revision history page', async ({
     'Company Data'
   )
   expect(await page.getByTestId('company-data-row').all()).toHaveLength(3)
+})
+
+test('Check ODX-D page - column selection on database table', async ({
+  page,
+}) => {
+  await page.goto('/odx-d')
+
+  const dbTable = page.getByLabel('Diagnostic layer containers table')
+
+  await expect(dbTable).toBeVisible()
+
+  await page.getByTestId('odxDatabases-columns-dropdown-button').click()
+
+  // The databases table has 8 total columns which can be toggled on/off in the column selection dropdown
+  expect(
+    await page.getByTestId('odxDatabases-columns-dropdown-entry').all()
+  ).toHaveLength(8)
+})
+
+test('Check ODX-D page - VARIANT TYPE filter on diagnostic variants table', async ({
+  page,
+}) => {
+  await page.goto('/odx-d?objectId=c91929c68418ac5db8f9534234e0fc1b')
+
+  const variantsTable = page.getByLabel('Diagnostic variants table')
+
+  await expect(variantsTable).toBeVisible()
+
+  await page.getByTestId('filter-VARIANT TYPE-button').click()
+
+  // Check that the dropdown menu is visible
+  await expect(
+    page
+      .getByTestId('filter-VARIANT TYPE-menu')
+      .filter({ has: page.getByRole('menu', { name: 'Filter' }) })
+  ).toBeVisible()
+
+  // Select the "ECU-VARIANT" value in the dropdown (matches 2 of 3 items)
+  await page
+    .getByTestId('filter-VARIANT TYPE-menu-entry-ECU-VARIANT')
+    .click({ force: true })
+
+  expect(
+    await page.getByRole('button', { name: 'Show Variant' }).all()
+  ).toHaveLength(2)
 })

@@ -52,6 +52,7 @@ export function TableFilterDropdown<Type extends object>({
               ? 'default'
               : 'warning'
           }
+          data-testid={`filter-${filterLabel}-button`}
           size="sm"
           variant="shadow"
         >
@@ -64,6 +65,7 @@ export function TableFilterDropdown<Type extends object>({
           list: 'max-h-[250px] overflow-y-auto',
         }}
         closeOnSelect={false}
+        data-testid={`filter-${filterLabel}-menu`}
         selectedKeys={selectedFilters}
         selectionMode="multiple"
         variant="flat"
@@ -85,7 +87,10 @@ export function TableFilterDropdown<Type extends object>({
           title={filterLabel}
         >
           {(item) => (
-            <DropdownItem key={getKeyValue(item, filterKey)}>
+            <DropdownItem
+              key={getKeyValue(item, filterKey)}
+              data-testid={`filter-${filterLabel}-menu-entry-${getKeyValue(item, filterKey)}`}
+            >
               {getKeyValue(item, filterKey) +
                 ` (${count_elements<Type>(
                   isAsyncListData<Type>(filterItems)
@@ -129,6 +134,7 @@ export function TableFilterObjectDropdown<Type extends object>({
               ? 'default'
               : 'warning'
           }
+          data-testid={`filter-${filterLabel}-button`}
           size="sm"
           variant="shadow"
         >
@@ -141,6 +147,7 @@ export function TableFilterObjectDropdown<Type extends object>({
           list: 'max-h-[250px] overflow-y-auto',
         }}
         closeOnSelect={false}
+        data-testid={`filter-${filterLabel}-menu`}
         selectedKeys={selectedFilters}
         selectionMode="multiple"
         variant="flat"
@@ -166,6 +173,7 @@ export function TableFilterObjectDropdown<Type extends object>({
                 getKeyValue(item, filterKey),
                 filterObjectProperty
               )}
+              data-testid={`filter-${filterLabel}-menu-entry-${getKeyValue(item, filterKey)}`}
             >
               {getKeyValue(getKeyValue(item, filterKey), filterObjectProperty) +
                 ` (${count_elements<Type>(filterItems.items, item, filterKey, filterObjectProperty)})`}
@@ -212,6 +220,7 @@ export function TableFilterObjectCollectionDropdown<Type extends object>({
               ? 'default'
               : 'warning'
           }
+          data-testid={`filter-${filterLabel}-button`}
           size="sm"
           variant="shadow"
         >
@@ -224,6 +233,7 @@ export function TableFilterObjectCollectionDropdown<Type extends object>({
           list: 'max-h-[250px] overflow-y-auto',
         }}
         closeOnSelect={false}
+        data-testid={`filter-${filterLabel}-menu`}
         selectedKeys={selectedFilters}
         selectionMode="multiple"
         variant="flat"
@@ -236,7 +246,10 @@ export function TableFilterObjectCollectionDropdown<Type extends object>({
       >
         <DropdownSection showDivider items={dropdownItems} title={filterLabel}>
           {(item) => (
-            <DropdownItem key={item.id}>
+            <DropdownItem
+              key={item.id}
+              data-testid={`filter-${filterLabel}-menu-entry-${item.label}`}
+            >
               {item.label +
                 ` (${count_elements_in_object_collections_with_id<Type>(filterItems.items, item.id, filterKey, objectPropertyName)})`}
             </DropdownItem>
@@ -325,11 +338,13 @@ export function ParameterTableColumnDropdown({
   visibleColumns,
   defaultVisibleColumns,
   visibleColumnsHandler,
+  tableName,
 }: {
   columnList: ParameterColumnDefinition[]
   visibleColumns: Selection
   defaultVisibleColumns: Set<string>
   visibleColumnsHandler: (keys: SharedSelection) => void
+  tableName: string
 }) {
   const parameterTypeMapping = new Map<string, string[]>()
 
@@ -356,6 +371,7 @@ export function ParameterTableColumnDropdown({
               ? 'default'
               : 'warning'
           }
+          data-testid={`${tableName}-columns-dropdown-button`}
           endContent={<ChevronDownIcon className="text-small" />}
           variant="shadow"
         >
@@ -390,7 +406,12 @@ export function ParameterTableColumnDropdown({
       >
         <DropdownSection showDivider>
           {columnList.map((column) => (
-            <DropdownItem key={column.key}>{column.label}</DropdownItem>
+            <DropdownItem
+              key={column.key}
+              data-testid={`${tableName}-columns-dropdown-entry`}
+            >
+              {column.label}
+            </DropdownItem>
           ))}
         </DropdownSection>
         <DropdownSection showDivider title="Parameter Types">
@@ -412,11 +433,13 @@ export function DopTableColumnDropdown({
   visibleColumns,
   defaultVisibleColumns,
   visibleColumnsHandler,
+  tableName,
 }: {
   columnList: DopColumnDefinition[]
   visibleColumns: Selection
   defaultVisibleColumns: Set<string>
   visibleColumnsHandler: (keys: SharedSelection) => void
+  tableName: string
 }) {
   const parameterTypeMapping = new Map<string, string[]>()
 
@@ -443,6 +466,7 @@ export function DopTableColumnDropdown({
               ? 'default'
               : 'warning'
           }
+          data-testid={`${tableName}-columns-dropdown-button`}
           endContent={<ChevronDownIcon className="text-small" />}
           variant="shadow"
         >
@@ -477,7 +501,12 @@ export function DopTableColumnDropdown({
       >
         <DropdownSection showDivider>
           {columnList.map((column) => (
-            <DropdownItem key={column.key}>{column.label}</DropdownItem>
+            <DropdownItem
+              key={column.key}
+              data-testid={`${tableName}-columns-dropdown-entry`}
+            >
+              {column.label}
+            </DropdownItem>
           ))}
         </DropdownSection>
         <DropdownSection showDivider title="DOP Types">
@@ -516,6 +545,7 @@ export function TableFilterDropdownWithExtractorFunc<Type extends object>({
               ? 'default'
               : 'warning'
           }
+          data-testid={`filter-${filterLabel}-button`}
           size="sm"
           variant="shadow"
         >
@@ -528,6 +558,7 @@ export function TableFilterDropdownWithExtractorFunc<Type extends object>({
           list: 'max-h-[250px] overflow-y-auto',
         }}
         closeOnSelect={false}
+        data-testid={`filter-${filterLabel}-menu`}
         selectedKeys={selectedFilters}
         selectionMode="multiple"
         variant="flat"
@@ -550,7 +581,10 @@ export function TableFilterDropdownWithExtractorFunc<Type extends object>({
             const itemValue = filterValueExtractorFunc(item)
 
             return (
-              <DropdownItem key={itemValue ? itemValue : ''}>
+              <DropdownItem
+                key={itemValue ? itemValue : ''}
+                data-testid={`filter-${filterLabel}-menu-entry-${filterValueExtractorFunc(item)}`}
+              >
                 {filterValueExtractorFunc(item) +
                   ` (${count_elements_with_extractFunc<Type>(filterItems.items, item, filterValueExtractorFunc)})`}
               </DropdownItem>
@@ -597,6 +631,7 @@ export function TableFilterObjectCollectionWithExtractorFuncDropdown<
               ? 'default'
               : 'warning'
           }
+          data-testid={`filter-${filterLabel}-button`}
           size="sm"
           variant="shadow"
         >
@@ -609,6 +644,7 @@ export function TableFilterObjectCollectionWithExtractorFuncDropdown<
           list: 'max-h-[250px] overflow-y-auto',
         }}
         closeOnSelect={false}
+        data-testid={`filter-${filterLabel}-menu`}
         selectedKeys={selectedFilters}
         selectionMode="multiple"
         variant="flat"
@@ -621,7 +657,10 @@ export function TableFilterObjectCollectionWithExtractorFuncDropdown<
       >
         <DropdownSection showDivider items={dropdownItems} title={filterLabel}>
           {(item) => (
-            <DropdownItem key={item.id}>
+            <DropdownItem
+              key={item.id}
+              data-testid={`filter-${filterLabel}-menu-entry-${item.label}`}
+            >
               {item.label +
                 ` (${count_elements_in_object_collections_with_extractFunc<Type>(filterItems.items, item.id, filterValueExtractorFunc)})`}
             </DropdownItem>

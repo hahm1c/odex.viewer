@@ -200,7 +200,12 @@ export default function RevisionDetailsPage() {
           </div>
         </div>
 
-        <Table hideHeader isStriped aria-label="Revision details table">
+        <Table
+          hideHeader
+          isStriped
+          aria-label="Revision details table"
+          data-testid="revision-metadata-table"
+        >
           <TableHeader>
             <TableColumn>ROW_NAME</TableColumn>
             <TableColumn>DETAILS</TableColumn>

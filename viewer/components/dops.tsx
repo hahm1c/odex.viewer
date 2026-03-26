@@ -1502,6 +1502,7 @@ export function DopsVariantComponent({
             <DopTableColumnDropdown
               columnList={columns}
               defaultVisibleColumns={INITIAL_VISIBLE_COLUMNS}
+              tableName="dops"
               visibleColumns={visibleColumns}
               visibleColumnsHandler={setVisibleColumns}
             />
@@ -3080,6 +3081,7 @@ export function DataObjectPropsOverviewComponent({
             <DopTableColumnDropdown
               columnList={columns}
               defaultVisibleColumns={INITIAL_VISIBLE_COLUMNS}
+              tableName="dops"
               visibleColumns={visibleColumns}
               visibleColumnsHandler={setVisibleColumns}
             />
