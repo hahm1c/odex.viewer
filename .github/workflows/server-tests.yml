@@ -8,15 +8,20 @@ on:
 
 jobs: 
   linting:
-    runs-on: os-small-amd64-linux
+    runs-on:  ${{ matrix.os }}    
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
+        python-version: ["3.12", "3.14"]
+      fail-fast: false
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v4
+      - name: Set up Python ${{matrix.python-version}}
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: ${{matrix.python-version}}
           cache: "pip"
 
       - name: Install development and testing dependencies
@@ -37,16 +42,21 @@ jobs:
           ruff check .
 
   testing:
-    runs-on: os-small-amd64-linux
+    runs-on:  ${{ matrix.os }}    
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest", "windows-latest", "macos-latest" ]
+        python-version: ["3.12", "3.14"]
+      fail-fast: false
     timeout-minutes: 60
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v4
+      - name: Set up Python ${{matrix.python-version}}
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: ${{matrix.python-version}}
           cache: "pip"
 
       - name: Install development and testing dependencies
