@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "odex.viewer"
-description = "A web-based viewer for exploring automotive diagnostic data description files based on the file format described by ISO 22901. It consists of a frontend and a backend server. The backend provides the underlying data via a RESTfull HTTP API, whilst the frontend visualizes said data within a web browser using web technologies."
+description = "A web-based viewer for exploring automotive diagnostic data description files based on the file format described by ISO 22901. It consists of a frontend and a backend server. The backend provides the underlying data via a RESTful HTTP API, whilst the frontend visualizes said data within a web browser using web technologies."
 license = "AGPL-3.0-only"
 authors = [
     {name = "Michael Hahn", email = "michael.a.hahn@mercedes-benz.com"},
