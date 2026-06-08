@@ -775,6 +775,7 @@ export function ParametersComponent({
             <ParameterTableColumnDropdown
               columnList={columns}
               defaultVisibleColumns={INITIAL_VISIBLE_COLUMNS}
+              tableName="parameters"
               visibleColumns={visibleColumns}
               visibleColumnsHandler={setVisibleColumns}
             />
@@ -895,7 +896,12 @@ export function ParameterDetailsComponent({
   targetObjectIds: ParameterTargetObjectIds
 }) {
   return (
-    <Table hideHeader isStriped aria-label="Parameter details table">
+    <Table
+      hideHeader
+      isStriped
+      aria-label="Parameter details table"
+      data-testid="parameter-details-table"
+    >
       <TableHeader>
         <TableColumn width={200}>KEY</TableColumn>
         <TableColumn>VALUE</TableColumn>

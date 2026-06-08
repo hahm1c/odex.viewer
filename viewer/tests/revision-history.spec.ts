@@ -2,9 +2,7 @@
 import { test, expect } from '@playwright/test'
 
 test('Check revision history page', async ({ page }) => {
-  await page.goto(
-    'http://localhost:3000/revision?objectId=c91929c68418ac5db8f9534234e0fc1b'
-  )
+  await page.goto('/revision?objectId=c91929c68418ac5db8f9534234e0fc1b')
 
   // Check the title and container name
   await expect(page.getByTestId('revision-history-title')).toBeVisible()
@@ -59,9 +57,7 @@ test('Check revision history page', async ({ page }) => {
 })
 
 test('Check revision details page', async ({ page }) => {
-  await page.goto(
-    'http://localhost:3000/revision?objectId=c91929c68418ac5db8f9534234e0fc1b'
-  )
+  await page.goto('/revision?objectId=c91929c68418ac5db8f9534234e0fc1b')
 
   // Check that entry for revision label '1.0' exists and is visible
   await expect(
@@ -75,23 +71,20 @@ test('Check revision details page', async ({ page }) => {
     .getByRole('link', { name: 'Details' })
     .click()
 
-  // Check the title and container name
-  await expect(page.getByTestId('revision-history-title')).toBeVisible()
-  await expect(page.getByTestId('revision-history-title')).toHaveText(
-    'Revision History'
+  // Check the title and revision label
+  await expect(page.getByTestId('revision-title')).toBeVisible()
+  await expect(page.getByTestId('revision-title')).toHaveText(
+    'Details of Revision'
   )
-  await expect(
-    page.getByTestId('revision-history-container-name')
-  ).toBeVisible()
-  await expect(page.getByTestId('revision-history-container-name')).toHaveText(
-    'somersault'
-  )
+  await expect(page.getByTestId('revision-label-heading')).toBeVisible()
+  await expect(page.getByTestId('revision-label-heading')).toHaveText('1.0')
 
   // Check the Metadata section
   await expect(page.getByTestId('revision-metadata-subtitle')).toBeVisible()
   await expect(page.getByTestId('revision-metadata-subtitle')).toHaveText(
     'Metadata'
   )
+  await expect(page.getByTestId('revision-metadata-table')).toBeVisible()
 
   // Check the Modifications section
   await expect(

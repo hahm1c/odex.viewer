@@ -59,5 +59,5 @@ test('upload PDX file', async ({ page }) => {
     .click()
   await expect(page.getByText('Start exploring your')).toBeVisible()
 
-  await expect(page).toHaveURL('http://localhost:3000')
+  await expect(page).toHaveURL('/')
 })
