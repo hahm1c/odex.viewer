@@ -2,7 +2,7 @@
 
 # The odex.viewer Backend Server
 
-The odex.viewer backend server provides a RESTfull HTTP API server to manage, retrieve and interact with automotive diagnostic data descriptions using the [ODX file format](https://www.asam.net/standards/detail/mcd-2-d/). It is implemented using the Python programming language, the [Flask](https://flask.palletsprojects.com/) HTTP server framework, and [`odxtools`](https://github.com/mercedes-benz/odxtools) for interacting with the ODX datasets.
+The odex.viewer backend server provides a RESTful HTTP API server to manage, retrieve and interact with automotive diagnostic data descriptions using the [ODX file format](https://www.asam.net/standards/detail/mcd-2-d/). It is implemented using the Python programming language, the [Flask](https://flask.palletsprojects.com/) HTTP server framework, and [`odxtools`](https://github.com/mercedes-benz/odxtools) for interacting with the ODX datasets.
 
 ## Prerequisites
 

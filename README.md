@@ -14,7 +14,7 @@
 
 # odex.viewer
 
-This repository contains a web-based viewer for exploring automotive diagnostic data description files based on the file format described by ISO 22901. It consists of a [frontend](./viewer/README.md) and a [backend server](./server/README.md). The backend provides the underlying data via a RESTfull HTTP API, whilst the frontend visualizes said data within a web browser using web technologies.
+This repository contains a web-based viewer for exploring automotive diagnostic data description files based on the file format described by ISO 22901. It consists of a [frontend](./viewer/README.md) and a [backend server](./server/README.md). The backend provides the underlying data via a RESTful HTTP API, whilst the frontend visualizes said data within a web browser using web technologies.
 
 This `README.md` provides a quick overview of the project; further details are given by the respective `README.md` files for the [user interface](./viewer/README.md) and the [backend server](./server/README.md).
 
