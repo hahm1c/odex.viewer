@@ -37,8 +37,7 @@ export default function SettingsPage() {
               variant="shadow"
               onPress={() => {
                 clearSettingsStorage()
-                window.location.href = '/settings'
-                router.refresh()
+                window.location.reload()
               }}
             >
               Reset UI state to defaults
