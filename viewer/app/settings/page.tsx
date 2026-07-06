@@ -4,14 +4,11 @@
 import { Button } from '@heroui/button'
 import { Tooltip } from '@heroui/tooltip'
 import clsx from 'clsx'
-import { useRouter } from 'next/navigation'
 
 import { title, subtitle } from '@/components/primitives'
 import { clearSettingsStorage } from '@/storage/settings'
 
 export default function SettingsPage() {
-  const router = useRouter()
-
   return (
     <div>
       <h1 className={title()}>Settings</h1>
@@ -37,8 +34,7 @@ export default function SettingsPage() {
               variant="shadow"
               onPress={() => {
                 clearSettingsStorage()
-                window.location.href = '/settings'
-                router.refresh()
+                window.location.reload()
               }}
             >
               Reset UI state to defaults
