@@ -40,7 +40,7 @@ export function StateChartOverviewComponent() {
   const [selectedUsedInVariants, setSelectedUsedInVariants] =
     React.useState<Selection>(new Set([]))
   const selectedUsedInVariantValues = React.useMemo(() => {
-    let arr = Array.from(selectedUsedInVariants)
+    const arr = Array.from(selectedUsedInVariants)
 
     return arr
   }, [selectedUsedInVariants])
@@ -48,7 +48,7 @@ export function StateChartOverviewComponent() {
     new Set([])
   )
   const selectedContainerValues = React.useMemo(() => {
-    let arr = Array.from(selectedContainers)
+    const arr = Array.from(selectedContainers)
 
     return arr
   }, [selectedContainers])
@@ -147,7 +147,7 @@ export function StateChartOverviewComponent() {
       const mappingVariantResult = new Map<string, string>(variantMap)
       const mappingContainerResult = new Map<string, string>(containerMap)
 
-      for (var chart of sc_collection.items) {
+      for (const chart of sc_collection.items) {
         chart.meta_data?.referencing_variants?.forEach((variant) =>
           variant && variant.perma_id && variant.short_name
             ? mappingVariantResult.set(variant.perma_id, variant.short_name)
@@ -291,23 +291,23 @@ export function StateChartVisualizationComponent(
   theme: UseThemeProps,
   cyRef: string
 ) {
-  var elements: { data: { id: string } }[] = []
+  const elements: { data: { id: string } }[] = []
 
-  for (var st of state_transitions) {
+  for (const st of state_transitions) {
     if (st.target_snref === st.source_snref) {
       continue
     }
-    var target = {
+    const target = {
       data: {
         id: st.target_snref ? st.target_snref : '',
       },
     }
-    var source = {
+    const source = {
       data: {
         id: st.source_snref ? st.source_snref : '',
       },
     }
-    var source_to_target = {
+    const source_to_target = {
       data: {
         id: st.source_snref
           ? st.source_snref?.concat(
@@ -327,7 +327,7 @@ export function StateChartVisualizationComponent(
     }
     elements.push(source_to_target)
   }
-  var text_and_line_color = theme.theme === 'dark' ? 'white' : 'black'
+  const text_and_line_color = theme.theme === 'dark' ? 'white' : 'black'
   const cy = cytoscape({
     container: document.getElementById(cyRef),
     elements: elements,

@@ -22,6 +22,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   const { theme, setTheme } = useTheme()
   const isSSR = useIsSSR()
 
+  /* eslint-disable @typescript-eslint/no-unused-expressions */
   const onChange = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
   }

@@ -29,9 +29,9 @@ function resolveTeamMemberBasedCompanyData(
 ): TeamMemberBasedCompanyData[] {
   const result: TeamMemberBasedCompanyData[] = []
 
-  for (let entry of compData) {
+  for (const entry of compData) {
     if (entry.team_members) {
-      for (let tm of entry.team_members) {
+      for (const tm of entry.team_members) {
         result.push({
           data_id: entry.data_id,
           short_name: entry.short_name,

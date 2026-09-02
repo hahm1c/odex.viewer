@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-/* eslint-disable no-console */
 
 import { test as teardown, expect } from '@playwright/test'
 

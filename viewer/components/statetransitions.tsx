@@ -32,9 +32,9 @@ export function StateTransitionsComponent({
   const cyRef = 'cy'
   const theme = useTheme()
 
-  for (var s of stateCharts) {
+  for (const s of stateCharts) {
     if (s.states) {
-      for (var stateTrans of stateTransitions) {
+      for (const stateTrans of stateTransitions) {
         if (
           s.states.some((e) => e.short_name === stateTrans.source_snref) &&
           stateTrans.source_snref
@@ -45,8 +45,9 @@ export function StateTransitionsComponent({
     }
   }
 
+  /* eslint-disable @typescript-eslint/no-unused-expressions */
   React.useEffect(() => {
-    var graph = cytoscape()
+    let graph = cytoscape()
 
     if (stateTransitions.length != 0) {
       graph = StateChartVisualizationComponent(stateTransitions, theme, cyRef)

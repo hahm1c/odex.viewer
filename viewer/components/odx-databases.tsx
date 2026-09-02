@@ -43,9 +43,9 @@ function resolveDLCBasedDatabaseInfo(
 ): CombinedDatasetDlcType[] {
   const result: CombinedDatasetDlcType[] = []
 
-  for (let entry of databases) {
+  for (const entry of databases) {
     if (entry.diagnostic_layer_containers) {
-      for (let dlc of entry.diagnostic_layer_containers) {
+      for (const dlc of entry.diagnostic_layer_containers) {
         result.push({
           perma_id: entry.perma_id,
           ephemeral_id: entry.ephemeral_id,
@@ -81,7 +81,7 @@ export function OdxDatabasesComponent({ pageId }: { pageId: string }) {
     params: { path: { 'data-type': 'PDX' } },
   })
 
-  let list = useAsyncList({
+  const list = useAsyncList({
     async load() {
       return {
         items: odx_databases

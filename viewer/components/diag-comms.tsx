@@ -266,7 +266,7 @@ export function DiagComms({
   )
 
   const visibleColumnsValues = React.useMemo(() => {
-    let arr = Array.from(visibleColumns)
+    const arr = Array.from(visibleColumns)
 
     return arr
   }, [visibleColumns])
@@ -386,7 +386,7 @@ export function DiagComms({
     new Set([])
   )
   const selectedCommTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedCommTypes)
+    const arr = Array.from(selectedCommTypes)
 
     return arr
   }, [selectedCommTypes])
@@ -394,7 +394,7 @@ export function DiagComms({
   const [selectedOriginLayers, setSelectedOriginLayers] =
     React.useState<Selection>(new Set([]))
   const selectedOriginLayerValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginLayers)
+    const arr = Array.from(selectedOriginLayers)
 
     return arr
   }, [selectedOriginLayers])
@@ -402,7 +402,7 @@ export function DiagComms({
   const [selectedUdsServices, setSelectedUdsServices] =
     React.useState<Selection>(new Set([]))
   const selectedUdsServiceValues = React.useMemo(() => {
-    let arr = Array.from(selectedUdsServices)
+    const arr = Array.from(selectedUdsServices)
 
     return arr
   }, [selectedUdsServices])
@@ -411,7 +411,7 @@ export function DiagComms({
     new Set([])
   )
   const selectedSemanticValues = React.useMemo(() => {
-    let arr = Array.from(selectedSemantics)
+    const arr = Array.from(selectedSemantics)
 
     return arr
   }, [selectedSemantics])
@@ -419,7 +419,7 @@ export function DiagComms({
   const [selectedAddressings, setSelectedAddressings] =
     React.useState<Selection>(new Set([]))
   const selectedAddressingValues = React.useMemo(() => {
-    let arr = Array.from(selectedAddressings)
+    const arr = Array.from(selectedAddressings)
 
     return arr
   }, [selectedAddressings])
@@ -427,7 +427,7 @@ export function DiagComms({
   const [selectedDiagClasses, setSelectedDiagClasses] =
     React.useState<Selection>(new Set([]))
   const selectedDiagClassValues = React.useMemo(() => {
-    let arr = Array.from(selectedDiagClasses)
+    const arr = Array.from(selectedDiagClasses)
 
     return arr
   }, [selectedDiagClasses])
@@ -436,7 +436,7 @@ export function DiagComms({
     React.useState<Selection>(new Set([]))
 
   const selectedFunctClassValues = React.useMemo(() => {
-    let arr = Array.from(selectedFunctClasses)
+    const arr = Array.from(selectedFunctClasses)
 
     return arr
   }, [selectedFunctClasses])
@@ -1060,7 +1060,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
   )
 
   const visibleColumnsValues = React.useMemo(() => {
-    let arr = Array.from(visibleColumns)
+    const arr = Array.from(visibleColumns)
 
     return arr
   }, [visibleColumns])
@@ -1232,7 +1232,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
     new Set([])
   )
   const selectedCommTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedCommTypes)
+    const arr = Array.from(selectedCommTypes)
 
     return arr
   }, [selectedCommTypes])
@@ -1240,7 +1240,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
   const [selectedOriginLayers, setSelectedOriginLayers] =
     React.useState<Selection>(new Set([]))
   const selectedOriginLayerValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginLayers)
+    const arr = Array.from(selectedOriginLayers)
 
     return arr
   }, [selectedOriginLayers])
@@ -1248,7 +1248,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
   const [selectedUdsServices, setSelectedUdsServices] =
     React.useState<Selection>(new Set([]))
   const selectedUdsServiceValues = React.useMemo(() => {
-    let arr = Array.from(selectedUdsServices)
+    const arr = Array.from(selectedUdsServices)
 
     return arr
   }, [selectedUdsServices])
@@ -1257,7 +1257,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
     new Set([])
   )
   const selectedSemanticValues = React.useMemo(() => {
-    let arr = Array.from(selectedSemantics)
+    const arr = Array.from(selectedSemantics)
 
     return arr
   }, [selectedSemantics])
@@ -1265,7 +1265,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
   const [selectedDiagClasses, setSelectedDiagClasses] =
     React.useState<Selection>(new Set([]))
   const selectedDiagClassValues = React.useMemo(() => {
-    let arr = Array.from(selectedDiagClasses)
+    const arr = Array.from(selectedDiagClasses)
 
     return arr
   }, [selectedDiagClasses])
@@ -1274,7 +1274,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
     React.useState<Selection>(new Set([]))
 
   const selectedFunctClassValues = React.useMemo(() => {
-    let arr = Array.from(selectedFunctClasses)
+    const arr = Array.from(selectedFunctClasses)
 
     return arr
   }, [selectedFunctClasses])
@@ -1282,7 +1282,7 @@ export function DiagCommsOverviewComponent({ pageId }: { pageId: string }) {
   const [selectedUsedInVariants, setSelectedUsedInVariants] =
     React.useState<Selection>(new Set([]))
   const selectedUsedInVariantValues = React.useMemo(() => {
-    let arr = Array.from(selectedUsedInVariants)
+    const arr = Array.from(selectedUsedInVariants)
 
     return arr
   }, [selectedUsedInVariants])
