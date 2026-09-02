@@ -7,7 +7,7 @@
     "api-client-gen": "openapi-typescript ../diag-server.yml -o ./api/diag-server.d.ts",
     "build": "next build",
     "serve-static": "serve out",
-    "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
+    "lint": "eslint . --fix",
     "test:dev": "playwright test --workers=1 --config=playwright.config-dev.ts",
     "test": "playwright test",
     "test:ts": "tsc --noEmit",
@@ -63,6 +63,7 @@
     "swr-openapi": "^5.1.4"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.6",
     "@next/eslint-plugin-next": "16.3.4",
     "@playwright/test": "^1.58.2",
     "@react-types/shared": "3.30.0",
@@ -99,7 +100,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --cache --cache-location .next/cache/eslint/ --config .eslintrc.json --fix"
+      "eslint --cache --cache-location .next/cache/eslint/ --fix"
     ],
     "*.{js,jsx,ts,tsx,css,scss,md,yml,yaml}": "prettier --write --ignore-unknown"
   },
