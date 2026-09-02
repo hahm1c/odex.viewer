@@ -85,6 +85,12 @@ The viewer code can be linted using `eslint` with the following command:
 npm run lint
 ```
 
+To directly fix linter findings you can use the following command:
+
+```shell
+npm run lint:fix
+```
+
 To run typescript type checks for the viewer code the following command can be used:
 
 ```shell
@@ -102,6 +108,15 @@ To directly fix the formatting you can use the following command:
 ```shell
 npm run prettier
 ```
+
+To support automated checks on every commit, the project uses [lint-staged](https://github.com/lint-staged/lint-staged) together with [husky](https://github.com/typicode/husky).
+The required pre-commit hook can be setup by executing the following command:
+
+```shell
+npm run prepare
+```
+
+The applied `lint-staged` configuration can be found in [package.json](package.json).
 
 ## Build the odex.viewer as a Static Site
 

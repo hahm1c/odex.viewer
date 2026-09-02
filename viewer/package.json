@@ -7,13 +7,14 @@
     "api-client-gen": "openapi-typescript ../diag-server.yml -o ./api/diag-server.d.ts",
     "build": "next build",
     "serve-static": "serve out",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test:dev": "playwright test --workers=1 --config=playwright.config-dev.ts",
     "test": "playwright test",
     "test:ts": "tsc --noEmit",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
-    "prepare": "husky"
+    "prepare": "cd .. && husky viewer/.husky"
   },
   "dependencies": {
     "@heroicons/react": "2.2.0",
