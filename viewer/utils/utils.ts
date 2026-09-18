@@ -93,11 +93,12 @@ export function sortItemsByNestedSortDescriptor<T extends object>(
   return cmp
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export function getNestedKeyValue(obj: any, key: Key): any | undefined {
   const keys = key.toString().split('.')
-  var current = obj
+  let current = obj
 
-  for (var k of keys) {
+  for (const k of keys) {
     current = getKeyValue(current, k)
     if (current === undefined) return undefined
   }
@@ -174,10 +175,10 @@ export function count_elements_with_extractFunc<Type extends object>(
 ) {
   let count = 0
 
-  let itemValue = extractFunc(item)
+  const itemValue = extractFunc(item)
 
   items.forEach(function (value) {
-    let valueProp = extractFunc(value)
+    const valueProp = extractFunc(value)
 
     if (valueProp !== undefined && valueProp === itemValue) {
       count += 1
@@ -301,6 +302,7 @@ export function isNumber(str: string) {
   return !Number.isNaN(str) && !isNaN(parseFloat(str))
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export function getHexRepresentation(value: any | undefined) {
   if (value && isNumber(value.toString())) {
     return `0x${Number.parseInt(value.toString()).toString(16).toUpperCase()}`
@@ -671,7 +673,7 @@ function extractLinearScaleInfo(
 }
 
 function extractTexttableScaleInfo(scaleDef: CompuScale): ScaleRenderingData {
-  let lowerLimit = extractLimitInfo(scaleDef.lower_limit, 'lower')
+  const lowerLimit = extractLimitInfo(scaleDef.lower_limit, 'lower')
   let upperLimit = extractLimitInfo(scaleDef.upper_limit, 'upper')
   let valueText = undefined
 
@@ -945,7 +947,7 @@ function findMatchingScaleConstraint(
   value: number,
   scaleConstraints: InternalConstraintInterval[]
 ): InternalConstraintInterval | undefined {
-  let result = scaleConstraints.find(
+  const result = scaleConstraints.find(
     (constraint) =>
       value >= constraint.interval[0] && value <= constraint.interval[1]
   )

@@ -71,7 +71,7 @@ export default function StateChartPage() {
     React.useState<StateTransitionWithDiagCommRefs[]>()
   const cyRef = 'cy'
   const theme = useTheme()
-  var graph = cytoscape()
+  let graph = cytoscape()
 
   React.useEffect(() => {
     const fetchMetaData = async () => {
@@ -153,7 +153,7 @@ export default function StateChartPage() {
         theme,
         cyRef
       )
-      var text_and_line_color = theme.theme === 'dark' ? 'white' : 'black'
+      const text_and_line_color = theme.theme === 'dark' ? 'white' : 'black'
 
       graph.elements(`node[id = "${stateChartData.start_state_snref}"]`).style({
         'border-style': 'double',

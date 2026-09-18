@@ -4,6 +4,7 @@ import importlib.resources as pkg_resources
 import io
 import mimetypes
 import os
+import re
 
 import connexion
 from connexion.apps.flask import FlaskApp
@@ -11,7 +12,7 @@ from connexion.middleware import MiddlewarePosition
 from diag_server import const
 from diag_server.globals import logger
 from diag_server.openapi_server import api_jsonifier
-from flask import Response, send_file, send_from_directory
+from flask import Response, request, send_file, send_from_directory
 from starlette.middleware.cors import CORSMiddleware
 
 frontend_path_rel = ''
@@ -20,6 +21,13 @@ DEFAULT_PKG_UI_STATIC_EXPORT_PATH = os.path.join(os.path.dirname(__file__), 'fro
 
 def frontend(path: str | None = None) -> Response:
     _, ext = os.path.splitext(path) if path else (None, None)
+
+    # Workaround to handle RSC (React Server Components) requests correctly in the static export of the frontend
+    # TODO: As soon as issue [#85374](https://github.com/vercel/next.js/issues/85374) of Nextjs v16 is resolved, remove workaround.
+    rsc_request = request.args.get('_rsc') is not None
+    if rsc_request and path:
+        path = re.sub(r'(?<!__next)\.__PAGE__', '/__PAGE__', path)
+
     if const.DIAG_UI_STATIC_EXPORT_PATH == DEFAULT_PKG_UI_STATIC_EXPORT_PATH:
         mimetype = 'text/html'
         

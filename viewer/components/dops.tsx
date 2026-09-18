@@ -198,7 +198,7 @@ export function DopsVariantComponent({
   )
 
   const visibleColumnsValues = React.useMemo(() => {
-    let arr = Array.from(visibleColumns)
+    const arr = Array.from(visibleColumns)
 
     return arr
   }, [visibleColumns])
@@ -282,7 +282,7 @@ export function DopsVariantComponent({
     new Set([])
   )
   const selectedTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedTypes)
+    const arr = Array.from(selectedTypes)
 
     return arr
   }, [selectedTypes])
@@ -290,7 +290,7 @@ export function DopsVariantComponent({
   const [selectedOriginLayers, setSelectedOriginLayers] =
     React.useState<Selection>(new Set([]))
   const selectedOriginLayerValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginLayers)
+    const arr = Array.from(selectedOriginLayers)
 
     return arr
   }, [selectedOriginLayers])
@@ -298,7 +298,7 @@ export function DopsVariantComponent({
   const [selectedPhysicalTypes, setSelectedPhysicalTypes] =
     React.useState<Selection>(new Set([]))
   const selectedPhyscialTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedPhysicalTypes)
+    const arr = Array.from(selectedPhysicalTypes)
 
     return arr
   }, [selectedPhysicalTypes])
@@ -306,7 +306,7 @@ export function DopsVariantComponent({
   const [selectedCompuMethods, setSelectedCompuMethods] =
     React.useState<Selection>(new Set([]))
   const selectedCompuMethodsValues = React.useMemo(() => {
-    let arr = Array.from(selectedCompuMethods)
+    const arr = Array.from(selectedCompuMethods)
 
     return arr
   }, [selectedCompuMethods])
@@ -314,7 +314,7 @@ export function DopsVariantComponent({
   const [selectedDiagCodedTypes, setSelectedDiagCodedTypes] =
     React.useState<Selection>(new Set([]))
   const selectedDiagCodedTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedDiagCodedTypes)
+    const arr = Array.from(selectedDiagCodedTypes)
 
     return arr
   }, [selectedDiagCodedTypes])
@@ -1648,7 +1648,7 @@ export function DataObjectPropsOverviewComponent({
   )
 
   const visibleColumnsValues = React.useMemo(() => {
-    let arr = Array.from(visibleColumns)
+    const arr = Array.from(visibleColumns)
 
     return arr
   }, [visibleColumns])
@@ -1778,7 +1778,7 @@ export function DataObjectPropsOverviewComponent({
     new Set([])
   )
   const selectedTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedTypes)
+    const arr = Array.from(selectedTypes)
 
     return arr
   }, [selectedTypes])
@@ -1786,7 +1786,7 @@ export function DataObjectPropsOverviewComponent({
   const [selectedOriginLayers, setSelectedOriginLayers] =
     React.useState<Selection>(new Set([]))
   const selectedOriginLayerValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginLayers)
+    const arr = Array.from(selectedOriginLayers)
 
     return arr
   }, [selectedOriginLayers])
@@ -1794,7 +1794,7 @@ export function DataObjectPropsOverviewComponent({
   const [selectedUsedInVariants, setSelectedUsedInVariants] =
     React.useState<Selection>(new Set([]))
   const selectedUsedInVariantValues = React.useMemo(() => {
-    let arr = Array.from(selectedUsedInVariants)
+    const arr = Array.from(selectedUsedInVariants)
 
     return arr
   }, [selectedUsedInVariants])
@@ -1802,7 +1802,7 @@ export function DataObjectPropsOverviewComponent({
   const [selectedPhysicalTypes, setSelectedPhysicalTypes] =
     React.useState<Selection>(new Set([]))
   const selectedPhyscialTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedPhysicalTypes)
+    const arr = Array.from(selectedPhysicalTypes)
 
     return arr
   }, [selectedPhysicalTypes])
@@ -1810,7 +1810,7 @@ export function DataObjectPropsOverviewComponent({
   const [selectedCompuMethods, setSelectedCompuMethods] =
     React.useState<Selection>(new Set([]))
   const selectedCompuMethodsValues = React.useMemo(() => {
-    let arr = Array.from(selectedCompuMethods)
+    const arr = Array.from(selectedCompuMethods)
 
     return arr
   }, [selectedCompuMethods])
@@ -1818,7 +1818,7 @@ export function DataObjectPropsOverviewComponent({
   const [selectedDiagCodedTypes, setSelectedDiagCodedTypes] =
     React.useState<Selection>(new Set([]))
   const selectedDiagCodedTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedDiagCodedTypes)
+    const arr = Array.from(selectedDiagCodedTypes)
 
     return arr
   }, [selectedDiagCodedTypes])

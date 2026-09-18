@@ -62,7 +62,7 @@ export const Navbar = () => {
         />
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-2" href="/">
-            <Logo heigth="32" viewBox="0 0 32 32" width="32" />
+            <Logo height="32" viewBox="0 0 32 32" width="32" />
             <p className="font-bold text-inherit">odex.viewer</p>
           </NextLink>
         </NavbarBrand>

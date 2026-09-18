@@ -197,7 +197,7 @@ export function DtcsVariantComponent({
   )
 
   const visibleColumnsValues = React.useMemo(() => {
-    let arr = Array.from(visibleColumns)
+    const arr = Array.from(visibleColumns)
 
     return arr
   }, [visibleColumns])
@@ -265,7 +265,7 @@ export function DtcsVariantComponent({
     new Set([])
   )
   const selectedLevelValues = React.useMemo(() => {
-    let arr = Array.from(selectedLevels)
+    const arr = Array.from(selectedLevels)
 
     return arr
   }, [selectedLevels])
@@ -273,7 +273,7 @@ export function DtcsVariantComponent({
   const [selectedOriginDtcDop, setSelectedOriginDtcDop] =
     React.useState<Selection>(new Set([]))
   const selectedOriginDtcDopValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginDtcDop)
+    const arr = Array.from(selectedOriginDtcDop)
 
     return arr
   }, [selectedOriginDtcDop])
@@ -281,7 +281,7 @@ export function DtcsVariantComponent({
   const [selectedOriginLayers, setSelectedOriginLayers] =
     React.useState<Selection>(new Set([]))
   const selectedOriginLayerValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginLayers)
+    const arr = Array.from(selectedOriginLayers)
 
     return arr
   }, [selectedOriginLayers])
@@ -811,7 +811,7 @@ export function DiagTroubleCodesOverviewComponent({
   )
 
   const visibleColumnsValues = React.useMemo(() => {
-    let arr = Array.from(visibleColumns)
+    const arr = Array.from(visibleColumns)
 
     return arr
   }, [visibleColumns])
@@ -925,7 +925,7 @@ export function DiagTroubleCodesOverviewComponent({
     new Set([])
   )
   const selectedLevelValues = React.useMemo(() => {
-    let arr = Array.from(selectedLevels)
+    const arr = Array.from(selectedLevels)
 
     return arr
   }, [selectedLevels])
@@ -933,7 +933,7 @@ export function DiagTroubleCodesOverviewComponent({
   const [selectedOriginDtcDop, setSelectedOriginDtcDop] =
     React.useState<Selection>(new Set([]))
   const selectedOriginDtcDopValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginDtcDop)
+    const arr = Array.from(selectedOriginDtcDop)
 
     return arr
   }, [selectedOriginDtcDop])
@@ -941,7 +941,7 @@ export function DiagTroubleCodesOverviewComponent({
   const [selectedOriginLayers, setSelectedOriginLayers] =
     React.useState<Selection>(new Set([]))
   const selectedOriginLayerValues = React.useMemo(() => {
-    let arr = Array.from(selectedOriginLayers)
+    const arr = Array.from(selectedOriginLayers)
 
     return arr
   }, [selectedOriginLayers])
@@ -949,7 +949,7 @@ export function DiagTroubleCodesOverviewComponent({
   const [selectedUsedInVariants, setSelectedUsedInVariants] =
     React.useState<Selection>(new Set([]))
   const selectedUsedInVariantValues = React.useMemo(() => {
-    let arr = Array.from(selectedUsedInVariants)
+    const arr = Array.from(selectedUsedInVariants)
 
     return arr
   }, [selectedUsedInVariants])

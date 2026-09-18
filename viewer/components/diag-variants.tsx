@@ -158,13 +158,13 @@ export function DiagnosticVariantsComponent({
     new Set([])
   )
   const selectedSNameValue = React.useMemo(() => {
-    let arr = Array.from(selectedSNames)
+    const arr = Array.from(selectedSNames)
 
     return arr
   }, [selectedSNames])
 
   const selectedVariantValue = React.useMemo(() => {
-    let arr = Array.from(selectedVariants)
+    const arr = Array.from(selectedVariants)
 
     return arr
   }, [selectedVariants])
@@ -179,7 +179,7 @@ export function DiagnosticVariantsComponent({
     },
   })
 
-  let list = useAsyncList({
+  const list = useAsyncList({
     async load() {
       return {
         items: data_variants ? data_variants.items : [],
@@ -376,9 +376,9 @@ function resolveVariantsWithDatasetInfo(
 ): CombinedVariantDatasetType[] {
   const result: CombinedVariantDatasetType[] = []
 
-  for (let entry of variantDataSetInfo) {
+  for (const entry of variantDataSetInfo) {
     if (entry.variants) {
-      for (let variant of entry.variants) {
+      for (const variant of entry.variants) {
         result.push({
           ds_perma_id: entry.dataSetId.toString(),
           var_perma_id: variant.perma_id,
@@ -409,7 +409,7 @@ export function VariantsOverviewComponent({ pageId }: { pageId: string }) {
     params: { path: { 'data-type': 'PDX' } },
   })
 
-  let list = useAsyncList({
+  const list = useAsyncList({
     async load() {
       return {
         items: odx_datasets

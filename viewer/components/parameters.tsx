@@ -81,7 +81,7 @@ export function ParametersComponent({
     new Set([])
   )
   const selectedSemanticValues = React.useMemo(() => {
-    let arr = Array.from(selectedSemantics)
+    const arr = Array.from(selectedSemantics)
 
     return arr
   }, [selectedSemantics])
@@ -90,7 +90,7 @@ export function ParametersComponent({
     new Set([])
   )
   const selectedParamTypeValues = React.useMemo(() => {
-    let arr = Array.from(selectedParamTypes)
+    const arr = Array.from(selectedParamTypes)
 
     return arr
   }, [selectedParamTypes])
@@ -252,7 +252,7 @@ export function ParametersComponent({
   )
 
   const visibleColumnsValues = React.useMemo(() => {
-    let arr = Array.from(visibleColumns)
+    const arr = Array.from(visibleColumns)
 
     return arr
   }, [visibleColumns])

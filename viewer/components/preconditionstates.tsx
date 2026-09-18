@@ -25,9 +25,9 @@ export function PreConditionStatesComponent({
 }) {
   const stateDict: Record<string, StateChart> = {}
 
-  for (var s of stateCharts) {
+  for (const s of stateCharts) {
     if (s.states) {
-      for (var state of preConditionStates) {
+      for (const state of preConditionStates) {
         if (
           s.states.some((e) => e.short_name === state.short_name) &&
           state.perma_id

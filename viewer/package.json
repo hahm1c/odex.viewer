@@ -1,19 +1,20 @@
 {
   "name": "odex.viewer-frontend",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "api-client-gen": "openapi-typescript ../diag-server.yml -o ./api/diag-server.d.ts",
     "build": "next build",
     "serve-static": "serve out",
-    "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test:dev": "playwright test --workers=1 --config=playwright.config-dev.ts",
     "test": "playwright test",
     "test:ts": "tsc --noEmit",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
-    "prepare": "husky"
+    "prepare": "cd .. && husky viewer/.husky"
   },
   "dependencies": {
     "@heroicons/react": "2.2.0",
@@ -53,17 +54,18 @@
     "intl-messageformat": "^10.7.16",
     "katex": "0.16.22",
     "lodash-es": "4.18.1",
-    "next": "^15.5.25",
+    "next": "16.3.4",
     "next-themes": "^0.4.6",
     "openapi-fetch": "0.13.5",
-    "react": "19.0.0",
+    "react": "19.2.8",
     "react-chartjs-2": "^5.3.0",
-    "react-dom": "19.0.0",
+    "react-dom": "19.2.8",
     "swr": "^2.3.3",
     "swr-openapi": "^5.1.4"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.5.18",
+    "@eslint/eslintrc": "^3.3.6",
+    "@next/eslint-plugin-next": "16.3.4",
     "@playwright/test": "^1.58.2",
     "@react-types/shared": "3.30.0",
     "@svgr/webpack": "^8.1.0",
@@ -71,14 +73,14 @@
     "@types/katex": "0.16.7",
     "@types/lodash-es": "4.17.12",
     "@types/node": "20.5.7",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
     "@typescript-eslint/eslint-plugin": "8.28.0",
     "@typescript-eslint/parser": "8.28.0",
     "autoprefixer": "10.4.21",
     "axios": "^1.18.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^15.5.2",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.3.4",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -99,8 +101,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --cache --cache-location .next/cache/eslint/ --config .eslintrc.json --fix"
+      "eslint --cache --cache-location .next/cache/eslint/ --fix"
     ],
     "*.{js,jsx,ts,tsx,css,scss,md,yml,yaml}": "prettier --write --ignore-unknown"
+  },
+  "overrides": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5"
   }
 }
